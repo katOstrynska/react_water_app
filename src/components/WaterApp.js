@@ -27,14 +27,14 @@ export default class WaterApp extends React.Component {
 
     handleWaterQuantityChange = (e) => {
         const waterQuantity = e.target.value;
-        this.setState({ waterQuantity });
-        console.log(e.target.id);
-        console.log(this.state.waterQuantity === waterQuantity);
+        this.setState({ 
+            waterQuantity: waterQuantity
+        });
+        console.log(this.state.waterQuantity);
     }
 
     handleCheckedWaterQuantity = (e) => {
-        const value = e.target.value;
-        this.state.waterQuantity === value;
+        this.state.waterQuantity;
     }
 
     render() {
@@ -43,7 +43,7 @@ export default class WaterApp extends React.Component {
                 <form>
                     <WaterButtons
                         quantities={quantitiesData}
-                        handleCheckedWaterQuantity={(e) => this.handleCheckedWaterQuantity(e)}
+                        // checked={(e) => this.handleCheckedWaterQuantity(e)}
                         handleWaterQuantityChange={(e) => this.handleWaterQuantityChange(e)}
                     />
                 </form>

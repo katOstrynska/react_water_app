@@ -10,7 +10,7 @@ const WaterButtons = (props) => (
                     id={quantity.id}
                     value={quantity.value}
                     label={quantity.name}
-                    checked={props.handleCheckedWaterQuantity}
+                    checked={props.handleWaterQuantityChange === quantity.value}
                     handleWaterQuantityChange={props.handleWaterQuantityChange}
                 />
             ))
