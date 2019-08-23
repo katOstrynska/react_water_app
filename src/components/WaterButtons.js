@@ -34,7 +34,9 @@ export default class WaterButtons extends React.Component {
 
     render () {
         return (
-            <div>
+            <div
+                className={this.props.disabled ? 'disabled' : null}
+            >
                 {
                     quantitiesData.map((quantity) => (
                         <WaterButton
