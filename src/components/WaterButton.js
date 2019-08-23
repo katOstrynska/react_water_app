@@ -1,7 +1,10 @@
 import React from 'react';
+import SVG from 'react-inlinesvg';
 
 const WaterButton = (props) => (
-    <div>
+    <div
+        className="waterButton"
+    >
         <input
             type="radio"
             id={props.id}
@@ -12,7 +15,8 @@ const WaterButton = (props) => (
             onChange={(e) => {props.handleWaterQuantityChange(e)}}
         />
         <label htmlFor={props.id}>
-            {props.label}
+            <SVG src={props.img} />
+            <span>{props.label}</span>
         </label>
     </div>
 );

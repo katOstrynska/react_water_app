@@ -1,3 +1,48 @@
-h1 {
-    color: tomato;
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.waterButtons {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    margin: 0 auto;
+}
+.waterButton {
+    width: 20%;
+    margin: 0 1%;
+    color: #145DA0;
+}
+.waterButton input {
+    width: 0;
+    opacity: 0;
+    height: 0;
+}
+.waterButton label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid #145DA0;
+    padding: 15px;
+    opacity: 0.5;
+}
+.waterButton label:hover,
+.waterButton input[type=radio]:checked + label {
+    opacity: 1;
+}
+.waterButton label > svg {
+    fill: #145DA0;
+}
+.waterButton label > span {
+    padding: 15px 0 0;
+}
+.disabled {
+    pointer-events: none;
+}
+.disabled label,
+.disabled input[type=radio]:checked + label {
+    opacity: 0.4;
 }

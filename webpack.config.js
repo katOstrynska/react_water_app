@@ -6,8 +6,8 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
-        publicPath: '/dist'
+        filename: 'bundle.js'
+        // publicPath: '/dist'
     },
     module: {
         rules: [
@@ -30,6 +30,14 @@ module.exports = {
                     'style-loader',
                     'css-loader'
                 ]
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                loader: 'file-loader',
+                options: {
+                    outputPath: 'img/',
+                    publicPath: 'img/'
+                }
             }
         ]
     },

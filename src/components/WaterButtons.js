@@ -1,21 +1,28 @@
 import React from 'react';
 import WaterButton from './WaterButton';
 
+import smallWaterIcon from '../img/water_small.svg';
+import mediumWaterIcon from '../img/water_medium.svg';
+import bigWaterIcon from '../img/water_big.svg';
+
 const quantitiesData = [
     {
         id: 'water_250_ml',
         value: 250,
-        name: 'water_250_ml'
+        name: '250 ml',
+        img: smallWaterIcon
     },
     {
         id: 'water_500_ml',
         value: 500,
-        name: 'water_500_ml'
+        name: '500 ml',
+        img: mediumWaterIcon
     },
     {
         id: 'water_1000_ml',
         value: 1000,
-        name: 'water_1000_ml'
+        name: '1000 ml',
+        img: bigWaterIcon
     }
 ];
 
@@ -35,7 +42,7 @@ export default class WaterButtons extends React.Component {
     render () {
         return (
             <div
-                className={this.props.disabled ? 'disabled' : null}
+                className={this.props.disabled ? 'waterButtons disabled' : 'waterButtons'}
             >
                 {
                     quantitiesData.map((quantity) => (
@@ -44,6 +51,7 @@ export default class WaterButtons extends React.Component {
                             id={quantity.id}
                             value={quantity.value}
                             label={quantity.name}
+                            img={quantity.img}
                             dataChecked={this.state.waterQuantity === quantity.value}
                             checked={this.state.waterQuantity === quantity.value}
                             handleWaterQuantityChange={(e) => this.handleWaterQuantityChange(e)}
