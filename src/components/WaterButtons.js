@@ -21,14 +21,14 @@ const quantitiesData = [
 
 export default class WaterButtons extends React.Component {
     state = {
-        waterQuantity: '250'
+        waterQuantity: 250
     };
 
     handleWaterQuantityChange = (e) => {
-        const waterQuantity = e.target.value;
+        const waterQuantity = parseFloat(e.target.value);
         this.setState({ 
             waterQuantity: waterQuantity
-            }, () => console.log(this.state.waterQuantity)
+            }, () => this.state.waterQuantity
         )
     }
 
@@ -42,7 +42,7 @@ export default class WaterButtons extends React.Component {
                             id={quantity.id}
                             value={quantity.value}
                             label={quantity.name}
-                            // dataChecked={props.handleWaterQuantityChange === quantity.value}
+                            dataChecked={this.state.waterQuantity === quantity.value}
                             checked={this.state.waterQuantity === quantity.value}
                             handleWaterQuantityChange={(e) => this.handleWaterQuantityChange(e)}
                         />
