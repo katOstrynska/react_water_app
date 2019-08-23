@@ -7,6 +7,7 @@ const WaterButton = (props) => (
             id={props.id}
             value={props.value}
             name="waterQuantity"
+            data-checked={props.dataChecked}
             checked={props.checked}
             onChange={(e) => {props.handleWaterQuantityChange(e)}}
         />
